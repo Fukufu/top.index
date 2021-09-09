@@ -1,0 +1,262 @@
+<!DOCTYPE html> <!--DOCTYPE statement-->
+<html lang="ja"> <!--Languages Codes-->
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css" media="all"><!--Css link-->
+        <meta charset = "utf-8"> <!--Japsnese notation-->
+        <title>top_html</title>
+        <!--[if lt IE 9]--> <!--else(HTML5)-->
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <!--[endif]-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <!--header start-->
+        <div>
+            <img src= "rogo.jpeg" alt = "rogo" class = "rogo">
+        </div>
+        <!--header end-->
+        <!--top start-->
+        <div>
+            <img src="top.png" alt = "topimage" class = "topimage">      
+          
+        </div>
+        <!--top end-->
+        <!--menu start-->
+        <script>
+        $(function() {
+            var Accordion = function(el, multiple) {
+              this.el = el || {};
+              // more then one submenu open?
+              this.multiple = multiple || false;
+              
+              var dropdownlink = this.el.find('.down');
+              dropdownlink.on('click',
+                              { el: this.el, multiple: this.multiple },
+                              this.dropdown);
+            };
+            
+            Accordion.prototype.dropdown = function(e) {
+              var $el = e.data.el,
+                  $this = $(this),
+                  //this is the ul.submenuItems
+                  $next = $this.next();
+              
+              $next.slideToggle();
+              $this.parent().toggleClass('open');
+              
+              if(!e.data.multiple) {
+                //show only one menu at the same time
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+              }
+            }
+            
+            var accordion = new Accordion($('.menu'), false);
+          })
+        </script>
+        <h2>メニュー</h2>
+        <ul class="menu">
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i> ホーム
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">クイズコーナー！</a></li>
+                    <li><a href="#">用語集</a></li>
+                    <li><a href="#">活動記録</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i> すぐ側にある危険
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">今，世界はどうなっているの？</a></li>
+                    <li><a href="#">危険の原因ってなに？</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i> 情報リテラシ
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">情報リテラシってなに？</a></li>
+                    <li><a href="#">最強のパスワードのつけ方！</a></li>
+                    <li><a href="#">どこまでが著作権？</a></li>
+                    <li><a href="#">デマ情報の見分け方</a></li>
+                    <li><a href="#">もしかして，それ誹謗中傷？</a></li>
+                    <li><a href="#">何故，個人情報はバレるのか！？</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i> リサーチ
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">危険が起きる条件とは？</a></li>
+                    <li><a href="#">情報にも法律があるよ！</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i>インタビュー
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">警察官に聞いてみた</a></li>
+                    <li><a href="#">心の先生に聞いてみた</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i> アンケ―ト
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">結果</a></li>
+                    <li><a href="#">分析・まとめ</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i> 実験
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">自分で指紋がとれる？！</a></li>
+                    <li><a href="#">写真からも指紋がとれる？！</a></li>
+                    <li><a href="#">写真に潜む位置情報？！</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i> まとめ
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">結局自分をどうやって守る？</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="down"><i class="road" aria-hidden="true"></i> サイト情報
+                    <i class="menu-down" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">参考文献</a></li>
+                    <li><a href="#">便利なサイト集</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!--menu end-->
+        <!--footer start-->
+        <footer id="footer">
+            <table  class="bbb" border="0">
+                <tr>
+                    <th>ホーム</th>
+                    <th>すぐ側にある危険</th>
+                    <th>情報リテラシ</th>
+                    <th>リサーチ</th>
+                    <th>インタビュー</th>
+                </tr>
+                <tr>
+                    <td>クイズコーナー！</td>
+                    <td>今，世界はどうなっているの？</td>
+                    <td>情報リテラシってなに？</td>
+                    <td>危険が起きる条件とは？</td>
+                    <td>警察官に聞いてみた</td>
+                </tr>
+                <tr>
+                    <td>用語集</td>
+                    <td>危険の原因ってなに？</td>
+                    <td>最強のパスワードのつけ方！</td>
+                    <td>情報にも法律があるよ！</td>
+                    <td>心の先生に聞いてみた</td>
+                </tr>
+                <tr>
+                    <td>活動記録</td>
+                    <td> </td>
+                    <td>どこまでが著作権？</td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td>デマ情報の見分け方！</td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td>もしかして，それ誹謗中傷？</td>
+                    <td> </td>
+                    <td> </td>               
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td>何故，個人情報はバレるのか！？</td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+            </table>
+            <table  class="bbb" border="0">
+                <tr>
+                    <th>アンケート</th>
+                    <th>実験</th>
+                    <th>まとめ</th>
+                    <th>サイト情報</th>
+                </tr>
+                <tr>
+                    <td>結果</td>
+                    <td>自分で指紋とれる？！</td>
+                    <td>結局自分をどうやって守る？</td>
+                    <td>参考文献</td>
+                </tr>
+                <tr>
+                    <td>分析・まとめ</td>
+                    <td>写真からも指紋が撮れる？！</td>
+                    <td> </td>
+                    <td>便利なサイト集</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>写真に潜む位置情報？！</td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+            </table> 
+            <div id="pagetop" hidden>
+                <a href="#">
+                    <img src="toptop.jpeg" width="60px" alt="ページのトップに戻る">
+                </a>
+            </div>
+
+            <!-- スクロール用 -->
+            <script>
+            $(function(){
+            var topBtn=$('#pagetop');
+            topBtn.hide();
+     
+            //ボタンの表示設定
+            $(window).scroll(function(){
+               if($(this).scrollTop()>300){
+                  //---- 画面を800pxスクロールしたら、ボタンを表示する
+                  topBtn.fadeIn();
+                }else{
+               //---- 画面が800pxより上なら、ボタンを表示しない
+                  topBtn.fadeOut();
+                } 
+             });
+     
+            //ボタンをクリックしたら、スクロールして上に戻る
+            topBtn.click(function(){
+                $('body,html').animate({
+                scrollTop: 0},500);
+                return false;
+              });
+            });
+            </script>
+        </footer>
+        <div class = "rogo_RAM">
+            <img src = "RAM.jpeg" alt = "RAM" class = "RAM">
+        </div>   
+    </body>
+</html>
